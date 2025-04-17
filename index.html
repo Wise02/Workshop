@@ -1,27 +1,22 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wise's Workshop</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <!-- Hero Section -->
   <section id="home" class="section hero">
     <canvas id="particles"></canvas>
     <div class="hero-content">
-      <img src="png/logo.png"
-      alt=">Wise's Workshop Logo"
-      id="hero-logo"
-      class="hero-logo fade-up"
-      draggable="false"
-      ondragstart="return false;">
+      <img src="png/logo.png" alt="Wise's Workshop Logo"
+           id="hero-logo" class="hero-logo fade-up" draggable="false" ondragstart="return false;">
       <p><span id="hero-text"></span></p>
       <div class="hero-buttons fade-up">
         <a href="#projects" class="btn">View Projects</a>
-        <a href="#about" class="btn">About Me</a>
+        <a href="#about"    class="btn">About Me</a>
       </div>
     </div>
   </section>
@@ -41,39 +36,36 @@
     </div>
   </section>
 
-  <!-- About Section (hidden until bottom) -->
+  <!-- About Section -->
   <section id="about" class="section about">
     <h2>About Me</h2>
     <div class="about-content">
-      <img src="https://media.licdn.com/dms/image/v2/D4E03AQFGPmWB_ur7NQ/profile-displayphoto-shrink_800_800/B4EZY0ACpyHYAk-/0/1744629149023?e=1750291200&v=beta&t=ZgiQe_ev0mJO4pscXMjhJSQ3W8mv59_tIrNs6rlGr3M" alt="Profile Picture" class="profile-img">
+      <img src="https://media.licdn.com/dms/image/v2/D4E03AQFGPmWB_ur7NQ/…"
+           alt="Profile Picture" class="profile-img">
       <div class="about-text">
-        <p>
-          Hey, I’m Itay (aka Wise) — a cybersecurity student and IT pro with 2+ years in networking, Linux, and automation. I’ve worked on pentesting, Python scripting, and creative tech solutions. This portfolio highlights my GitHub projects and love for solving tough problems through constant learning
-        </p>
+        <p>Hey, I’m Itay (aka Wise) — a cybersecurity student…</p>
       </div>
     </div>
   </section>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top Button (now inside BODY!) -->
   <button id="back-to-top" aria-label="Back to top">
-    <!-- simple up‑arrow SVG -->
     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
       <path d="M12 4l-8 8h5v8h6v-8h5z"/>
     </svg>
   </button>
-</body>
-</html>
 
   <!-- Footer -->
   <footer>
     <p>
       &copy; 2025 Wise's Workshop X
-      <a href="https://blackpaw21.github.io/TheForge/" target="_blank" rel="noopener" class="footer-link">
+      <a href="https://blackpaw21.github.io/TheForge/" target="_blank"
+         rel="noopener" class="footer-link">
         BlackPaw's Forge
       </a>
     </p>
     <div class="social-badges">
-      <a href="https://github.com/Wise02" target="_blank" rel="noopener">
+      <a href="https://github.com/Wise02"    target="_blank" rel="noopener">
         <img src="https://img.shields.io/badge/GitHub-Wise02-181717?logo=github&logoColor=white" alt="GitHub Wise02">
       </a>
       <a href="https://github.com/BlackPaw21" target="_blank" rel="noopener">
@@ -82,6 +74,7 @@
     </div>
   </footer>
 
+  <!-- Your script.js must be loaded *inside* the body, after the button -->
   <script src="js/script.js"></script>
 </body>
 </html>
