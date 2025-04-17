@@ -147,6 +147,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+// Back to Top button logic (50% of first section threshold)
+const backBtn = document.getElementById('back-to-top');
+const heroSection = document.getElementById('home');
+let isVisible = false;
+
+// compute threshold once (half of hero height)
+const threshold = heroSection.offsetHeight * 0.5;
+
+window.addEventListener('scroll', () => {
+  const pastThreshold = window.scrollY > threshold;
+  if (pastThreshold && !isVisible) {
+    // pop in
+    backBtn.style.display = 'flex';
+    backBtn.classList.remove('hide');
+    backBtn.classList.add('show');
+    isVisible = true;
+  } 
+  else if (!pastThreshold && isVisible) {
+    // pop out
+    backBtn.classList.remove('show');
+    backBtn.classList.add('hide');
+    isVisible = false;
+  }
+});
+
+// after jumpOut animation, hide and reset
+backBtn.addEventListener('animationend', e => {
+  if (e.animationName === 'jumpOut') {
+    backBtn.style.display = 'none';
+    backBtn.classList.remove('hide');
+  }
+});
+
+// click to scroll up
+backBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
   // 9) Mobile: override About‑Me link to scroll to footer
   const aboutBtn = document.querySelector('a[href="#about"]');
   aboutBtn.addEventListener('click', e => {
