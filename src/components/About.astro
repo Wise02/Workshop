@@ -24,6 +24,11 @@
         <p class="about-motto">Secure, automate, document. Repeat.</p>
       </div>
     </div>
+
+    <div class="reveal cv-block">
+      <p class="cv-label">MORE ABOUT ME</p>
+      <a href="/cv.pdf" class="btn" download>[ DOWNLOAD CV ]</a>
+    </div>
   </div>
 </section>
 
@@ -73,6 +78,18 @@
     letter-spacing: 1px;
   }
   .accent { color: var(--blood); font-weight: 700; }
+
+  .cv-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .cv-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+  }
 
   @media (max-width: 640px) {
     .about-card { flex-direction: column; padding: 24px; }
