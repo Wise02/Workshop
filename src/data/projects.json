@@ -1,0 +1,26 @@
+[
+  {
+    "title": "RevChat",
+    "description": "Real-time Flask chatroom with user authentication, secure password handling, and Socket.IO-based messaging — ideal for learning reverse shell concepts in a safe, interactive environment.",
+    "url": "https://github.com/Wise02/RevChat",
+    "tags": ["Python", "Flask", "Socket.IO"]
+  },
+  {
+    "title": "ZipCracker",
+    "description": "Powerful script to brute-force password-protected zip and rar archives.",
+    "url": "https://github.com/Wise02/ZipCracker",
+    "tags": ["Python", "Scripting"]
+  },
+  {
+    "title": "PT-report",
+    "description": "First penetration test report — comprehensive security assessment with 25+ findings against techie-world.xyz lab.",
+    "url": "https://github.com/Wise02/PT-report",
+    "tags": ["Pentest", "Report"]
+  },
+  {
+    "title": "enum5",
+    "description": "Subdomain enumeration and screenshot automation tool.",
+    "url": "https://github.com/Wise02/enum5",
+    "tags": ["Bash", "Recon"]
+  }
+]

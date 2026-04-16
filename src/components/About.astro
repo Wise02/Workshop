@@ -1,0 +1,81 @@
+---
+// src/components/About.astro
+---
+<section id="about" class="section about">
+  <div class="container">
+    <p class="section-label">[ ABOUT ]</p>
+    <h2 class="section-title">WHO AM I</h2>
+
+    <div class="about-card reveal">
+      <div class="about-photo-wrap">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4E03AQH2tsJWMNl5OQ/profile-displayphoto-scale_200_200/B4EZgy3.w2GwAc-/0/1753200194854?e=1762992000&v=beta&t=-h2sY6O_egfepJjSJBAGGwwlvQ_BfL-ZyBtx7BQqY50"
+          alt="Itay Ben-Adert"
+          class="about-photo"
+        />
+      </div>
+      <div class="about-text">
+        <p class="about-prompt">WISE@WORKSHOP:~$ cat about.txt</p>
+        <p>
+          Hello! My name is <span class="accent">Itay</span> (aka <span class="accent">Wise</span>) —
+          a passionate IT Specialist and Defensive/Offensive Cybersecurity graduate
+          with 2+ years of hands-on experience.
+        </p>
+        <p class="about-motto">Secure, automate, document. Repeat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about { background: var(--void); }
+
+  .about-card {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blood);
+    padding: 40px;
+    border-radius: 2px;
+  }
+
+  .about-photo-wrap { flex-shrink: 0; }
+  .about-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 2px solid var(--blood);
+    filter: grayscale(20%);
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .about-prompt {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--blood);
+    margin-bottom: 4px;
+  }
+  .about-text p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .about-motto {
+    font-style: italic;
+    color: var(--muted) !important;
+    letter-spacing: 1px;
+  }
+  .accent { color: var(--blood); font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .about-card { flex-direction: column; padding: 24px; }
+    .about-photo { width: 100px; height: 100px; }
+  }
+</style>

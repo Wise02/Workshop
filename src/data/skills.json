@@ -1,0 +1,12 @@
+{
+  "certifications": [
+    { "name": "CompTIA Security+", "issuer": "CompTIA", "year": 2024 },
+    { "name": "ADD CERT HERE", "issuer": "Issuer", "year": 2024 }
+  ],
+  "tools": [
+    "Linux", "Python", "Bash",
+    "Nmap", "Wireshark", "Burp Suite", "Metasploit",
+    "Git", "Docker", "VMware",
+    "Active Directory", "Windows Server"
+  ]
+}

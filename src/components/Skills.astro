@@ -1,0 +1,82 @@
+---
+// src/components/Skills.astro
+import skills from '../data/skills.json';
+---
+<section id="skills" class="section skills">
+  <div class="container">
+    <p class="section-label">[ SKILLS ]</p>
+    <h2 class="section-title">ARSENAL</h2>
+
+    <!-- Certifications -->
+    <div class="reveal certs-block">
+      <p class="block-label">WISE@WORKSHOP:~$ ls certifications/</p>
+      <div class="certs-list">
+        {skills.certifications.map(cert => (
+          <div class="cert-card">
+            <span class="cert-name">{cert.name}</span>
+            <span class="cert-meta">{cert.issuer} · {cert.year}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tools & Tech -->
+    <div class="reveal tools-block">
+      <p class="block-label">WISE@WORKSHOP:~$ cat tools.txt</p>
+      <div class="tools-grid">
+        {skills.tools.map(tool => (
+          <span class="tag">{tool}</span>
+        ))}
+      </div>
+    </div>
+
+    <!-- CV Download -->
+    <div class="reveal cv-block">
+      <a href="/cv.pdf" class="btn cv-btn" download>
+        [ DOWNLOAD CV ]
+      </a>
+      <span class="cv-note">— PDF available soon</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills { background: var(--surface); }
+
+  .block-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--blood);
+    margin-bottom: 20px;
+  }
+
+  .certs-block { margin-bottom: 56px; }
+  .certs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+  }
+  .cert-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blood);
+    padding: 14px 20px;
+    border-radius: 2px;
+  }
+  .cert-name { font-size: 13px; color: var(--text); letter-spacing: 1px; }
+  .cert-meta { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+
+  .tools-block { margin-bottom: 48px; }
+  .tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .cv-block { display: flex; align-items: center; gap: 16px; }
+  .cv-note { font-size: 11px; color: var(--muted); letter-spacing: 1px; font-style: italic; }
+
+  @media (max-width: 640px) {
+    .cert-card { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
