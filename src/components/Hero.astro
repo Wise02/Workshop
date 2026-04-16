@@ -37,6 +37,19 @@
     height: 100%;
     z-index: 0;
   }
+  /* Gradient fade at bottom of hero — sits above canvas, below content */
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background: linear-gradient(to bottom, transparent, #050505);
+    z-index: 0;
+    pointer-events: none;
+  }
+
   .hero-inner {
     position: relative;
     z-index: 1;
