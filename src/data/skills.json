@@ -1,11 +1,49 @@
 {
-  "certifications": [
-    { "name": "CompTIA Security+", "issuer": "CompTIA", "year": 2024 }
+  "education": [
+    {
+      "institution": "Ecom School",
+      "degree": "Defensive & Offensive Cybersecurity — Practical Course (360h)",
+      "period": "2024 – 2025"
+    }
   ],
-  "tools": [
-    "Linux", "Python", "Bash",
-    "Nmap", "Wireshark", "Burp Suite", "Metasploit",
-    "Git", "Docker", "VMware",
-    "Active Directory", "Windows Server"
-  ]
+  "experience": [
+    {
+      "title": "SOC Analyst Tier 1",
+      "company": "Migdal Insurance & Financial Holdings",
+      "period": "2025 – Present",
+      "highlights": [
+        "Monitored and responded to security incidents within the internal SOC",
+        "Investigated security events, maintained detailed incident logs",
+        "Hands-on with Splunk, Cortex XDR, SOAR, Azure Sentinel, Varonis",
+        "Operated Trellix, Guardicore, Aveksa, Forcepoint, IronPort"
+      ]
+    },
+    {
+      "title": "Helpdesk Tier 1",
+      "company": "Gav Systems",
+      "period": "2024 – 2025",
+      "highlights": [
+        "Remote and on-site support via AnyDesk",
+        "Scripted install and log automation tasks",
+        "AD account creation, mailbox setup, MFA enrollment, laptop deployment"
+      ]
+    },
+    {
+      "title": "IT Field Technician",
+      "company": "Kando",
+      "period": "2021 – 2024",
+      "highlights": [
+        "On-site and remote support for PCs, printers, scanners, IP cameras",
+        "Windows endpoint deployment: imaging, drivers, firmware updates",
+        "Active Directory: onboarding/offboarding, groups, permissions, GPOs"
+      ]
+    }
+  ],
+  "skills": {
+    "Cybersecurity": ["Reconnaissance", "Privilege Escalation", "SIEM Log Analysis", "Penetration Testing"],
+    "Operating Systems": ["Windows", "Active Directory", "Linux (Kali)", "Linux (Arch)"],
+    "Scripting": ["Python", "JavaScript", "Bash"],
+    "Tools": ["Splunk", "Cortex XDR", "SOAR", "Azure Sentinel", "Varonis", "Metasploit", "Nmap", "Wireshark", "Burp Suite", "Hydra", "Elastic", "Trellix", "Guardicore", "Forcepoint", "VMware", "VirtualBox"],
+    "Languages": ["Hebrew (Native)", "English (Fluent+)"]
+  }
 }

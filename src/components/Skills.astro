@@ -4,37 +4,61 @@ import skills from '../data/skills.json';
 ---
 <section id="skills" class="section skills">
   <div class="container">
-    <p class="section-label">[ SKILLS ]</p>
-    <h2 class="section-title">ARSENAL</h2>
+    <p class="section-label">[ BACKGROUND ]</p>
+    <h2 class="section-title">BACKGROUND</h2>
 
-    <!-- Certifications -->
-    <div class="reveal certs-block">
-      <p class="block-label">WISE@WORKSHOP:~$ ls certifications/</p>
-      <div class="certs-list">
-        {skills.certifications.map(cert => (
-          <div class="cert-card">
-            <span class="cert-name">{cert.name}</span>
-            <span class="cert-meta">{cert.issuer} · {cert.year}</span>
+    <!-- Education -->
+    <div class="reveal edu-block">
+      <p class="block-label">WISE@WORKSHOP:~$ cat education.txt</p>
+      <div class="entries-list">
+        {skills.education.map(edu => (
+          <div class="entry-card">
+            <div class="entry-top">
+              <span class="entry-title">{edu.institution}</span>
+              <span class="entry-period">{edu.period}</span>
+            </div>
+            <p class="entry-sub">{edu.degree}</p>
           </div>
         ))}
       </div>
     </div>
 
-    <!-- Tools & Tech -->
-    <div class="reveal tools-block">
-      <p class="block-label">WISE@WORKSHOP:~$ cat tools.txt</p>
-      <div class="tools-grid">
-        {skills.tools.map(tool => (
-          <span class="tag">{tool}</span>
+    <!-- Experience -->
+    <div class="reveal exp-block">
+      <p class="block-label">WISE@WORKSHOP:~$ cat experience.txt</p>
+      <div class="entries-list">
+        {skills.experience.map(job => (
+          <div class="entry-card">
+            <div class="entry-top">
+              <span class="entry-title">{job.title} — <span class="entry-company">{job.company}</span></span>
+              <span class="entry-period">{job.period}</span>
+            </div>
+            <ul class="entry-bullets">
+              {job.highlights.map(h => <li>{h}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="reveal skills-block">
+      <p class="block-label">WISE@WORKSHOP:~$ cat skills.txt</p>
+      <div class="skills-grid">
+        {Object.entries(skills.skills).map(([category, items]) => (
+          <div class="skill-category">
+            <p class="category-label">{category}</p>
+            <div class="tags-row">
+              {items.map(item => <span class="tag">{item}</span>)}
+            </div>
+          </div>
         ))}
       </div>
     </div>
 
     <!-- CV Download -->
     <div class="reveal cv-block">
-      <a href="/cv.pdf" class="btn cv-btn" download>
-        [ DOWNLOAD CV ]
-      </a>
+      <a href="/cv.pdf" class="btn" download>[ DOWNLOAD CV ]</a>
       <span class="cv-note">— PDF available soon</span>
     </div>
   </div>
@@ -50,33 +74,125 @@ import skills from '../data/skills.json';
     margin-bottom: 20px;
   }
 
-  .certs-block { margin-bottom: 56px; }
-  .certs-list {
+  /* Shared list */
+  .entries-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 600px;
+    max-width: 800px;
   }
-  .cert-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .entry-card {
     background: var(--elevated);
     border: 1px solid var(--border);
     border-left: 3px solid var(--blood);
-    padding: 14px 20px;
+    padding: 16px 20px;
     border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  .cert-name { font-size: 13px; color: var(--text); letter-spacing: 1px; }
-  .cert-meta { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
 
-  .tools-block { margin-bottom: 48px; }
-  .tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .entry-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
+  .entry-title {
+    font-size: 13px;
+    color: var(--text);
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .entry-company {
+    font-weight: 400;
+    color: var(--muted);
+  }
+
+  .entry-period {
+    font-size: 11px;
+    color: var(--blood);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .entry-sub {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .entry-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+  }
+
+  .entry-bullets li {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .entry-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--blood);
+    font-size: 10px;
+  }
+
+  /* Blocks spacing */
+  .edu-block  { margin-bottom: 48px; }
+  .exp-block  { margin-bottom: 48px; }
+  .skills-block { margin-bottom: 48px; }
+
+  /* Skills grid */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .skill-category {
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blood);
+    padding: 16px 20px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .category-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blood);
+  }
+
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* CV */
   .cv-block { display: flex; align-items: center; gap: 16px; }
-  .cv-note { font-size: 11px; color: var(--muted); letter-spacing: 1px; font-style: italic; }
+  .cv-note  { font-size: 11px; color: var(--muted); letter-spacing: 1px; font-style: italic; }
 
   @media (max-width: 640px) {
-    .cert-card { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .entry-top { flex-direction: column; }
+    .skills-grid { grid-template-columns: 1fr; }
   }
 </style>

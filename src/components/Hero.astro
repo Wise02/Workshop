@@ -112,18 +112,18 @@
   }
 
   function draw() {
-    ctx.fillStyle = 'rgba(5, 5, 5, 0.06)';
+    ctx.fillStyle = 'rgba(5, 5, 5, 0.09)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drops.forEach((y, i) => {
       const char = CHARS[Math.floor(Math.random() * CHARS.length)];
       const x = i * FONT_SIZE;
 
-      ctx.fillStyle = '#ff4040';
+      ctx.fillStyle = '#cc2020';
       ctx.font = `bold ${FONT_SIZE}px 'JetBrains Mono', monospace`;
       ctx.fillText(char, x, y * FONT_SIZE);
 
-      ctx.fillStyle = '#8b0000';
+      ctx.fillStyle = '#6b0000';
       ctx.font = `${FONT_SIZE}px 'JetBrains Mono', monospace`;
 
       if (y * FONT_SIZE > canvas.height && Math.random() > 0.975) {
