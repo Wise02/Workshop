@@ -1,1 +1,107 @@
-<!-- Nav placeholder -->
+---
+// src/components/Nav.astro
+---
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">WISE<span>@WORKSHOP</span></a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">[ ABOUT ]</a></li>
+      <li><a href="#skills">[ SKILLS ]</a></li>
+      <li><a href="#projects">[ PROJECTS ]</a></li>
+      <li><a href="#contact">[ CONTACT ]</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  #nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-height);
+    background: rgba(5, 5, 5, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--text);
+  }
+  .nav-logo span { color: var(--blood); }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    transition: color 200ms ease;
+  }
+  .nav-links a:hover { color: var(--blood); }
+
+  /* Hamburger */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .nav-toggle span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--text);
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .nav-toggle { display: flex; }
+    .nav-links {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      background: var(--void);
+      border-bottom: 1px solid var(--border);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 300ms ease;
+    }
+    .nav-links.open { max-height: 300px; }
+    .nav-links li { width: 100%; text-align: center; }
+    .nav-links a { display: block; padding: 16px; border-bottom: 1px solid var(--border); }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle')!;
+  const links  = document.getElementById('nav-links')!;
+
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+  // Close on link click (mobile)
+  links.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => links.classList.remove('open'))
+  );
+</script>
