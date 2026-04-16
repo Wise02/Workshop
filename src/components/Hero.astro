@@ -33,6 +33,8 @@
   #matrix-bg {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
   }
   .hero-inner {
@@ -90,8 +92,8 @@
   let drops: number[] = [];
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
     const cols = Math.floor(canvas.width / FONT_SIZE);
     drops = Array.from({ length: cols }, () => Math.random() * -50);
   }
